@@ -30,7 +30,7 @@ func lengthOfLongestSubstring(s string) int {
 	return res
 }
 
-// todo
+// todo:1
 // 16ms
 func lengthOfLongestSubstring2(s string) int {
 	var m = make(map[string]int)

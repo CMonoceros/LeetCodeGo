@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// todo
+// todo:1
 // 20ms
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	var res = &ListNode{0, nil}
