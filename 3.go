@@ -1,5 +1,9 @@
 package main
 
+// Hash Table
+// Two Pointers
+// String
+
 import (
 	"math"
 	"strings"

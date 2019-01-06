@@ -1,5 +1,8 @@
 package main
 
+// Array
+// Hash Table
+
 // 4ms
 func twoSum(nums []int, target int) []int {
 	var m = make(map[int][]int)
