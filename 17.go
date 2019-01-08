@@ -51,7 +51,7 @@ func letterCombinations(digits string) []string {
 	}
 }
 
-// todo:
+// todo:1
 // 0ms
 func letterCombinations2(digits string) []string {
 	d := []rune(digits)

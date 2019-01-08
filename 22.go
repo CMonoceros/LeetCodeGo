@@ -37,7 +37,7 @@ func generateParenthesis(n int) []string {
 	}
 }
 
-// todo:
+// todo:1
 // 8ms
 func generateParenthesis2(n int) []string {
 	var res []string
