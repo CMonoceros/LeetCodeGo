@@ -37,7 +37,7 @@ type p struct {
 	r int
 }
 
-// todo:
+// todo:1
 // 4ms
 func longestValidParentheses2(s string) int {
 	re := []rune(s)
@@ -50,8 +50,8 @@ func longestValidParentheses2(s string) int {
 	for i := 1; i < len(re); i++ {
 		if string(re[i]) == ")" && string(re[i-1]) == "(" {
 			d[i] = d[i-1] + 2
-			if i-2 >= 0 {
-				d[i] += d[i-2]
+			if i-1-1 >= 0 {
+				d[i] += d[i-1-1]
 			}
 		} else if string(re[i]) == ")" && string(re[i-1]) == ")" &&
 			i-1-d[i-1] >= 0 && string(re[i-1-d[i-1]]) == "(" {
