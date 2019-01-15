@@ -58,18 +58,18 @@ func letterCombinations2(digits string) []string {
 	if len(d) == 0 {
 		return []string{}
 	}
-	return dfs([]string{}, "", d)
-}
-
-func dfs(res []string, now string, d []rune) []string {
-	if len(now) == len(d) {
-		res := append(res, now)
+	var dfs func(res []string, now string, d []rune) []string
+	dfs = func(res []string, now string, d []rune) []string {
+		if len(now) == len(d) {
+			res := append(res, now)
+			return res
+		}
+		num, _ := strconv.Atoi(string(d[len(now)]))
+		m := letterMap(num)
+		for i := 0; i < len(m); i++ {
+			res = dfs(res, now+m[i], d)
+		}
 		return res
 	}
-	num, _ := strconv.Atoi(string(d[len(now)]))
-	m := letterMap(num)
-	for i := 0; i < len(m); i++ {
-		res = dfs(res, now+m[i], d)
-	}
-	return res
+	return dfs([]string{}, "", d)
 }

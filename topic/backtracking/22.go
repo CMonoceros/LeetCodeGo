@@ -41,19 +41,19 @@ func generateParenthesis(n int) []string {
 // 8ms
 func generateParenthesis2(n int) []string {
 	var res []string
-	return dfs(res, "", n, n)
-}
-
-func dfs(res []string, now string, l int, r int) []string {
-	if l == 0 && r == 0 {
-		res = append(res, now)
+	var dfs func(res []string, now string, l int, r int) []string
+	dfs = func(res []string, now string, l int, r int) []string {
+		if l == 0 && r == 0 {
+			res = append(res, now)
+			return res
+		}
+		if l > 0 && r > 0 {
+			res = dfs(res, now+"(", l-1, r)
+		}
+		if r > 0 && r > l {
+			res = dfs(res, now+")", l, r-1)
+		}
 		return res
 	}
-	if l > 0 && r > 0 {
-		res = dfs(res, now+"(", l-1, r)
-	}
-	if r > 0 && r > l {
-		res = dfs(res, now+")", l, r-1)
-	}
-	return res
+	return dfs(res, "", n, n)
 }
