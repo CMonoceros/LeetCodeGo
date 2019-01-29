@@ -10,17 +10,21 @@ import (
 // Stack
 // Dynamic Programming
 
-// todo:
-// 972ms
+// todo: 1
+// 76ms
 func trap(height []int) int {
 	res := 0
 	for i := 1; i < len(height); i++ {
 		lMax, rMax := 0, 0
 		for j := i; j >= 0; j-- {
-			lMax = int(math.Max(float64(lMax), float64(height[j])))
+			if lMax < height[j] {
+				lMax = height[j]
+			}
 		}
 		for j := i; j < len(height); j++ {
-			rMax = int(math.Max(float64(rMax), float64(height[j])))
+			if rMax < height[j] {
+				rMax = height[j]
+			}
 		}
 		res += int(math.Min(float64(lMax), float64(rMax))) - height[i]
 	}
@@ -28,7 +32,7 @@ func trap(height []int) int {
 }
 
 // DP缓存查询结果
-// todo:
+// todo: 1
 // 4ms
 func trap2(height []int) int {
 	res := 0
