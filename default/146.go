@@ -30,7 +30,7 @@ func (this *LRUCache) Get(key int) int {
 		}
 	}
 	if index != -1 {
-		this.data = append(append(this.data[0:index], this.data[(index + 1):]...), key)
+		this.data = append(append(this.data[0:index], this.data[(index+1):]...), key)
 	}
 	return res
 }

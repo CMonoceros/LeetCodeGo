@@ -22,7 +22,7 @@ func permuteUnique(nums []int) [][]int {
 				copy(cp, append(now, nums[i]))
 				dfs(cp)
 				visit[i] = false
-				for ; i+1 < len(nums) && nums[i] == nums[i+1]; {
+				for i+1 < len(nums) && nums[i] == nums[i+1] {
 					i++
 				}
 			}
